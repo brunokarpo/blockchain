@@ -47,7 +47,7 @@ class Blockchain:
                 return False
             previous_proof = previous_block['proof']
             proof = block['proof']
-            hash_operation = hashlib.sha256(str(proof**2 - previous_proof**2).encode).hexdigest()
+            hash_operation = hashlib.sha256(str(proof**2 - previous_proof**2).encode()).hexdigest()
             if hash_operation[:4] != '0000':
                 return False
             previous_block = block
@@ -61,7 +61,7 @@ blockchain = Blockchain()
 @app.route('/mine_block', methods = ['GET'])
 def mine_block():
     previous_block = blockchain.get_previous_block()
-    previous_proof = previous_block['previous_proof']
+    previous_proof = previous_block['proof']
     proof = blockchain.proof_of_work(previous_proof)
     previous_hash = blockchain.hash(previous_block)
     block = blockchain.create_block(proof, previous_hash)
