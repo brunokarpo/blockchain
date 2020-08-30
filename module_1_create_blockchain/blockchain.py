@@ -12,7 +12,7 @@ class Blockchain:
         
     def create_block(self, proof, previous_hash):
         block = {'index': len(self.chain) + 1,
-                 'timestamp': str(timestamp.timestamp.now()),
+                 'timestamp': str(datetime.datetime.now()),
                  'proof': proof,
                  'previous_hash': previous_hash}
         
