@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "33b667bc-ccce-407c-99ff-4ffcc66697d9",
+		"name": "HADCOIN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Chain",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HADCOIN_URL}}/get_chain",
+					"host": [
+						"{{HADCOIN_URL}}"
+					],
+					"path": [
+						"get_chain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Connect nodes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nodes\": [\n        \"http://127.0.0.1:5003\", \n        \"http://127.0.0.1:5002\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HADCOIN_URL}}/connect_node",
+					"host": [
+						"{{HADCOIN_URL}}"
+					],
+					"path": [
+						"connect_node"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sender\": \"Fernando\",\n    \"receiver\": \"Maria\",\n    \"amount\": 1000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HADCOIN_URL}}/add_transaction",
+					"host": [
+						"{{HADCOIN_URL}}"
+					],
+					"path": [
+						"add_transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mine block",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HADCOIN_URL}}/mine_block",
+					"host": [
+						"{{HADCOIN_URL}}"
+					],
+					"path": [
+						"mine_block"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Replace chain",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HADCOIN_URL}}/replace_chain",
+					"host": [
+						"{{HADCOIN_URL}}"
+					],
+					"path": [
+						"replace_chain"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
